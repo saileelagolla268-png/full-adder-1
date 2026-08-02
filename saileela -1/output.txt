@@ -1,0 +1,63 @@
+# Full Adder using Verilog
+
+#A B Cin | Sum Cout
+-------------------
+0 0 0 | 0 0
+0 0 1 | 1 0
+0 1 0 | 1 0
+0 1 1 | 0 1
+1 0 0 | 1 0
+1 0 1 | 0 1
+1 1 0 | 0 1
+1 1 1 | 1 1# Description
+This project implements a 1-bit Full Adder in Verilog HDL.
+
+### Inputs
+- A
+- B
+- Cin (Carry Input)
+
+### Outputs
+- Sum
+- Cout (Carry Output)
+
+## Logic Equations
+Sum = A ^ B ^ Cin
+
+Cout = (A & B) | (B & Cin) | (A & Cin)A B Cin | Sum Cout
+-------------------
+0 0 0 | 0 0
+0 0 1 | 1 0
+0 1 0 | 1 0
+0 1 1 | 0 1
+1 0 0 | 1 0
+1 0 1 | 0 1
+1 1 0 | 0 1
+1 1 1 | 1 1
+
+## Truth Table
+
+| A | B | Cin | Sum | Cout |
+|---|---|-----|-----|------|
+|0|0|0|0|0|
+|0|0|1|1|0|
+|0|1|0|1|0|
+|0|1|1|0|1|
+|1|0|0|1|0|
+|1|0|1|0|1|
+|1|1|0|0|1|
+|1|1|1|1|1|
+
+## Simulation
+Compile:
+```bash
+iverilog -o full_adder full_adder.v full_adder_tb.v
+```
+
+Run:
+```bash
+vvp full_adder
+```
+
+## Author
+Your Name
